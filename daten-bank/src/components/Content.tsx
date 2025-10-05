@@ -4,6 +4,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 
+import Ledger from "@/components/Ledger";
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -56,7 +58,7 @@ export default function BasicTabs() {
         Item Two
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Item Three
+        <Ledger />
       </CustomTabPanel>
     </Box>
   );
