@@ -5,6 +5,9 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 
 import Ledger from "@/components/Ledger";
+import CsvUploader from '@/components/CsvUploader';
+
+
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -37,6 +40,12 @@ function a11yProps(index: number) {
 
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
+  let dataArray = [
+    {date: "9/26/2025", amount: "-13.75", description: "Starbucks", type: "Entertainment"},
+    {date: "9/27/2025", amount: "-56.97", description: "DEPT EDUCATION - STUDENT LN", type: "Loans"},
+    {date: "9/27/2025", amount: "-32.69", description: "Burgerking", type: "Entertainment"}
+];
+  const [ledgerData, setLedgerData] = React.useState(dataArray);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -52,13 +61,13 @@ export default function BasicTabs() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        Item One
+        <CsvUploader setData={setLedgerData} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Item Two
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <Ledger />
+        <Ledger ledgerArray={ledgerData}/>
       </CustomTabPanel>
     </Box>
   );
