@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 
 import Ledger from "@/components/Ledger";
 import CsvUploader from '@/components/CsvUploader';
+import Visualize from '@/components/Charts/Visualize';
 
 
 
@@ -64,7 +65,7 @@ export default function BasicTabs() {
         <CsvUploader setData={setLedgerData} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <Visualize visualizeArray={ledgerData} />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <Ledger ledgerArray={ledgerData}/>
