@@ -53,7 +53,7 @@ export default function BasicTabs() {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <div className="w-full ">
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Import or Create Data" {...a11yProps(0)} />
@@ -70,6 +70,6 @@ export default function BasicTabs() {
       <CustomTabPanel value={value} index={2}>
         <Ledger ledgerArray={ledgerData}/>
       </CustomTabPanel>
-    </Box>
+    </div>
   );
 }
