@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import Papa from "papaparse";
 
-interface Entry {
-    date: string;
-    amount: number;
-    description: string;
-    type: string;
-}
-
 function CsvUploader(props:any) {
   const [loaded, setLoaded] = useState(false);
 
@@ -23,7 +16,7 @@ function CsvUploader(props:any) {
                     date: row["Effective Date"], 
                     amount: parseFloat(row["Amount"]), 
                     description: row["Description"], 
-                    type: row["Transaction Category"]
+                    category: row["Transaction Category"]
                 }));
                 props.setData(entries)
                 setLoaded(true);

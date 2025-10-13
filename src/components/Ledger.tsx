@@ -32,8 +32,8 @@ export default function Ledger({ledgerArray}:LedgerProps) {
         }
         if(type == 'category') {
             (sortOrder) 
-            ? array.sort((x, y) => x.category.toLowerCase().localeCompare(y.category.toLowerCase()))
-            : array.sort((x, y) => y.category.toLowerCase().localeCompare(x.category.toLowerCase()));
+            ? array.sort((x, y) => x.category.localeCompare(y.category))
+            : array.sort((x, y) => y.category.localeCompare(x.category));
             setDataArray(array);
         }
         setSortOrder(!sortOrder);
