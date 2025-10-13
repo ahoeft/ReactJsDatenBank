@@ -32,8 +32,8 @@ function PieCenterLabel({ children }: { children: React.ReactNode }) {
 
 export default function Visualize({visualizeArray}:VisualizeProps) {
   let data = [];
-  let filtered = visualizeArray.filter((entry) => entry.type != 'Paychecks/Salary');
-  let grouped = Object.groupBy(filtered, ({ type }) => type);
+  let filtered = visualizeArray.filter((entry) => entry.category != 'Paychecks/Salary');
+  let grouped = Object.groupBy(filtered, ({ category }) => category);
   
 
 data = Object.entries(grouped).map(([type, entries]) => ({
@@ -45,7 +45,7 @@ data = Object.entries(grouped).map(([type, entries]) => ({
   return (
     
     <PieChart series={[{ data, innerRadius: 80 }]} {...size}>
-      <PieCenterLabel>Center label</PieCenterLabel>
+      <PieCenterLabel>Spending</PieCenterLabel>
     </PieChart>
   );
 }
