@@ -1,13 +1,5 @@
 "use client";
 
-
-type Entry = {
-    date: string,
-    amount: number,
-    description: string,
-    type: string,
-}
-
 interface LedgerProps {
     ledgerArray: Entry[]
 }

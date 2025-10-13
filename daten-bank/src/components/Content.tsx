@@ -41,10 +41,10 @@ function a11yProps(index: number) {
 
 export default function BasicTabs() {
   const [value, setValue] = React.useState(0);
-  let dataArray = [
-    {date: "9/26/2025", amount: "-13.75", description: "Starbucks", type: "Entertainment"},
-    {date: "9/27/2025", amount: "-56.97", description: "DEPT EDUCATION - STUDENT LN", type: "Loans"},
-    {date: "9/27/2025", amount: "-32.69", description: "Burgerking", type: "Entertainment"}
+  let dataArray : Entry[] = [
+    {date: "9/26/2025", amount: parseFloat("-13.75"), description: "Starbucks", type: "Entertainment"},
+    {date: "9/27/2025", amount: parseFloat("-56.97"), description: "DEPT EDUCATION - STUDENT LN", type: "Loans"},
+    {date: "9/27/2025", amount: parseFloat("-32.69"), description: "Burgerking", type: "Entertainment"}
 ];
   const [ledgerData, setLedgerData] = React.useState(dataArray);
 

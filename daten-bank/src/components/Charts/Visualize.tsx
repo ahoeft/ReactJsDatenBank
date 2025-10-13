@@ -5,13 +5,6 @@ import { PieChart } from '@mui/x-charts/PieChart';
 import { useDrawingArea } from '@mui/x-charts/hooks';
 import { styled } from '@mui/material/styles';
 
-type Entry = {
-    date: string,
-    amount: string,
-    description: string,
-    type: string,
-}
-
 interface VisualizeProps {
     visualizeArray: Entry[]
 }
@@ -45,7 +38,7 @@ export default function Visualize({visualizeArray}:VisualizeProps) {
 
 data = Object.entries(grouped).map(([type, entries]) => ({
   value: entries?.reduce(
-  (accumulator, entry) => accumulator + Math.abs(parseFloat(entry.amount)), 0)!,
+  (accumulator, entry) => accumulator + Math.abs(entry.amount), 0)!,
   label: type,
 }));
 
